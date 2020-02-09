@@ -18,8 +18,13 @@
         function setColor(){
             var odiv=document.getElementById('div1');
             var txt1=document.getElementById('text1');
+            var otextarea=document.getElementById('textarea1');
+            var owords=txt1.value;
             odiv.style.backgroundColor=txt1.value;
             txt1.value="";
+            if(odiv.style.backgroundColor==owords){
+                otextarea.value=otextarea.value+owords+"\xa0";
+            }
         }
     </script>
 </head>
@@ -28,5 +33,7 @@
     </div>
     <input type="text" id="text1" placeholder="颜色代码">
     <input type="button" onclick="setColor()" id="btn1" value="改变">
+    <h5>你使用过的单词：</h5>
+    <textarea id="textarea1" cols="30" rows="10"></textarea>
 </body>
 </html>
